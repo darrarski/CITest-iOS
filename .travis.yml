@@ -4,6 +4,7 @@ before_install:
   - brew update
   - brew unlink xctool
   - brew install xctool
+  - gem install cocoapods
 
 script:
-  - xctool clean build test -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
+  - xctool clean build test -workspace CITest.xcworkspace -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
