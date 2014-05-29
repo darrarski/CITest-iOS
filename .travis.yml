@@ -2,8 +2,8 @@ language: objective-c
 
 before_install:
   - brew update
-  - brew upgrade xctool
+  - brew unlink xctool
+  - brew install xctool
 
 script:
-  - xctool -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
-  - xctool test -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
+  - xctool clean build test -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
