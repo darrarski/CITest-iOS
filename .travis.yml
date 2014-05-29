@@ -1,4 +1,9 @@
 language: objective-c
-xcode_project: CITest.xcodeproj
-xcode_scheme: CITest
-xcode_sdk: iphonesimulator7.1
+
+before_install:
+  - brew update
+  - brew upgrade xctool
+
+script:
+  - xctool -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
+  - xctool test -project CITest.xcodeproj -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
