@@ -445,7 +445,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CITestTests/CITestTests-Info.plist";
+				INFOPLIST_FILE = "CITestTests/Supporting Files/CITestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -463,7 +463,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CITest/Supporting Files/CITest-Prefix.pch";
-				INFOPLIST_FILE = "CITestTests/CITestTests-Info.plist";
+				INFOPLIST_FILE = "CITestTests/Supporting Files/CITestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -489,6 +489,7 @@
 				3103502819376DA700B04174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3103502919376DA700B04174 /* Build configuration list for PBXNativeTarget "CITestTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +498,7 @@
 				3103502B19376DA700B04174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
