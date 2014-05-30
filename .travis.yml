@@ -21,13 +21,13 @@ before_script:
   - chmod +x scripts/travis/add-key.sh
   - chmod +x scripts/travis/remove-key.sh
   - chmod +x scripts/travis/testflight.sh
-  - ./scripts/travis/add-key.sh
+  - scripts/travis/add-key.sh
 
 script:
   - xctool clean build test archive -workspace CITest.xcworkspace -scheme CITest -configuration Release -sdk iphoneos7.1 CONFIGURATION_BUILD_DIR='~/build/'
 
 after_script:
-  - ./scripts/travis/remove-key.sh
+  - scripts/travis/remove-key.sh
 
 after_success:
-  - ./scripts/travis/testflight.sh
+  - scripts/travis/testflight.sh
