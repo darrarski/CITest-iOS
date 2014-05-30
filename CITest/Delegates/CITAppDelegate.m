@@ -8,12 +8,14 @@
 
 #import "CITAppDelegate.h"
 #import <TestFlightSDK/TestFlight.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation CITAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [TestFlight takeOff:@"ebc7f5b3-69cc-4533-bdd7-d69466cf1c49"];
+    [Crashlytics startWithAPIKey:@"580f7b026ea9d8bfa6e9581e0a8861595f9354ca"];
     
     return YES;
 }
