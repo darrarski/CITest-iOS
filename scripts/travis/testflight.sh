@@ -1,16 +1,16 @@
 #!/bin/sh
 
-# https://gist.github.com/JagCesar/a6283bc2cb2f439b3a1d
-
 if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
   echo "This is a pull request. No deployment will be done."
   exit 0
 fi
+
 if [[ "$TRAVIS_BRANCH" != "master" ]]; then
   echo "Testing on a branch other than master. No deployment will be done."
   exit 0
 fi
- 
+
+# Thnaks @JagCesar https://gist.github.com/JagCesar/a6283bc2cb2f439b3a1d 
 # Thanks @djacobs https://gist.github.com/djacobs/2411095
  
 PROVISIONING_PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
@@ -30,17 +30,46 @@ echo "********************"
 echo "*    Uploading     *"
 echo "********************"
 
-echo "OUTPUTDIR:"
-ls $OUTPUTDIR
+IPA_FILE="$OUTPUTDIR/$APPNAME.ipa"
+DSYM_ZIP_FILE="$OUTPUTDIR/$APPNAME.app.dSYM.zip"
+TF_READY_TO_UPLOAD=true
 
-echo "DISTRIBUTION_LISTS:"
-echo $DISTRIBUTION_LISTS
+if [[ ! -f $IPA_FILE ]]; then
+    IPA_FILE_TEST="NOT FOUND"
+    TF_READY_TO_UPLOAD=false
+else
+  IPA_FILE_TEST="OK"
+fi
 
-curl http://testflightapp.com/api/builds.json \
-  -F file="@$OUTPUTDIR/$APPNAME.ipa" \
-  -F dsym="@$OUTPUTDIR/$APPNAME.app.dSYM.zip" \
+if [[ ! -f $DSYM_ZIP_FILE ]]; then
+    DSYM_ZIP_FILE_TEST="NOT FOUND"
+    TF_READY_TO_UPLOAD=false
+else
+  DSYM_ZIP_FILE_TEST="OK"
+fi
+
+echo
+echo "NOTES: $RELEASE_NOTES"
+echo "DISTRIBUTION_LISTS: $DISTRIBUTION_LISTS"
+echo "FILE: $OUTPUTDIR/$APPNAME.ipa [$IPA_FILE_TEST]"
+echo "DSYM: $OUTPUTDIR/$APPNAME.app.dSYM.zip [$DSYM_ZIP_FILE_TEST]"
+echo
+
+if ! $TF_READY_TO_UPLOAD ; then
+  echo "ERROR"
+  echo
+  exit 1
+fi
+
+RESPONSE=$(curl http://testflightapp.com/api/builds.json \
+  -F file="@$IPA_FILE" \
+  -F dsym="@$DSYM_ZIP_FILE" \
   -F api_token="$API_TOKEN" \
   -F team_token="$TEAM_TOKEN" \
-  -F distribution_lists="$DISTRIBUTION_LISTS" \
   -F notes="$RELEASE_NOTES" \
-  -F notify="FALSE"
+  -F notify=$TF_NOTIFY \
+  -F distribution_lists="$TF_DISTRIBUTION_LISTS")
+
+echo
+echo "RESPONSE: $RESPONSE"
+echo
