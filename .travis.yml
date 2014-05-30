@@ -24,7 +24,8 @@ before_script:
   - scripts/travis/add-key.sh
 
 script:
-  - xctool clean build test archive -workspace CITest.xcworkspace -scheme CITest -configuration Release -sdk iphoneos7.1 CONFIGURATION_BUILD_DIR='~/build/'
+  - xctool clean build test -workspace CITest.xcworkspace -scheme CITest -configuration Release -sdk iphonesimulator7.1 CONFIGURATION_BUILD_DIR='~/build/'
+  - xctool clean build archive -workspace CITest.xcworkspace -scheme CITest -configuration Release -sdk iphoneos7.1 CONFIGURATION_BUILD_DIR='~/build/'
 
 after_script:
   - scripts/travis/remove-key.sh
