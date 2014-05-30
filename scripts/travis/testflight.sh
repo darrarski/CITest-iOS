@@ -6,8 +6,8 @@ if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
   exit 0
 fi
 
-if [[ "$TRAVIS_BRANCH" != "master" ]]; then
-  echo "Testing on a branch other than master. No deployment will be done."
+if [[ "$TRAVIS_BRANCH" != "$TF_BRANCH" ]]; then
+  echo "Testing on a branch other than $TF_BRANCH. No deployment will be done."
   echo
   exit 0
 fi
