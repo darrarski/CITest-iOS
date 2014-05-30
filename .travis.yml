@@ -1,5 +1,9 @@
 language: objective-c
 
+env:
+  global:
+    secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
+
 before_install:
   - brew update
   - brew unlink xctool
