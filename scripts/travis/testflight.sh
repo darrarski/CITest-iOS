@@ -74,6 +74,7 @@ RESPONSE=$(curl http://testflightapp.com/api/builds.json \
   -F team_token="$TF_TEAM_TOKEN" \
   -F notes="$RELEASE_NOTES" \
   -F notify=$TF_NOTIFY \
+  -F replace=$TF_REPLACE \
   -F distribution_lists="$TF_DISTRIBUTION_LISTS")
 
 echo
