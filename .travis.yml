@@ -18,9 +18,9 @@ before_install:
 
 before_script:
   - export LANG=en_US.UTF-8
-  - chmod +x ./scripts/travis/add-key.sh
-  - chmod +x ./scripts/travis/remove-key.sh
-  - chmod +x ./scripts/travis/testflight.sh
+  - chmod +x scripts/travis/add-key.sh
+  - chmod +x scripts/travis/remove-key.sh
+  - chmod +x scripts/travis/testflight.sh
   - ./scripts/travis/add-key.sh
 
 script:
