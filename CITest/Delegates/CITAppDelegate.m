@@ -7,12 +7,14 @@
 //
 
 #import "CITAppDelegate.h"
+#import <TestFlightSDK/TestFlight.h>
 
 @implementation CITAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [TestFlight takeOff:@"ebc7f5b3-69cc-4533-bdd7-d69466cf1c49"];
+    
     return YES;
 }
 							
