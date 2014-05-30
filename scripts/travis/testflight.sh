@@ -16,7 +16,7 @@ fi
 # Thanks @djacobs https://gist.github.com/djacobs/2411095
  
 PROVISIONING_PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
-RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S %Z (%z)'`
+RELEASE_DATE=`date -u '+%Y-%m-%d %H:%M:%S %Z'`
 OUTPUTDIR="/Users/travis/build/release"
  
 echo "********************"
