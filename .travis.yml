@@ -6,7 +6,7 @@ env:
     - 'DEVELOPER_NAME="iPhone Distribution: EL Passion Next Sp. z o.o."'
     - PROFILE_NAME=Wildcard_App_InHouse_Dist
     - 'TF_DISTRIBUTION_LISTS="CITest"'
-    - TF_NOTIFY=False
+    - TF_NOTIFY=True
     - TF_REPLACE=True
     - 'TF_BRANCH="master"'
     - secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
