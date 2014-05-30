@@ -17,7 +17,7 @@ fi
  
 PROVISIONING_PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
-OUTPUTDIR="/Users/travis/build"
+OUTPUTDIR="/Users/travis/build/release"
  
 echo "********************"
 echo "*     Signing      *"
