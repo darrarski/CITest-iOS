@@ -11,13 +11,13 @@ env:
     - secure: So0sQgYHOqnG7PT1xyI4QHQCMLwIWXT0CByiPvpKIw1NdbvzR4Ihd8EBI1yo1Yf/JTZc/qvjCKI6qMOZ4Ro9M7EfZLh2LdacyrUHXfjTTkJ4/D7gNrOQ0ucEr2knUoHaxVRA53bYQ8PdRpXqMCHWDPmvjNenLf05Y3FIVBlIi9E=
 
 before_install:
+  - export LANG=en_US.UTF-8
   - brew update
   - brew unlink xctool
   - brew install xctool
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 
 before_script:
-  - export LANG=en_US.UTF-8
   - chmod +x scripts/travis/add-key.sh
   - chmod +x scripts/travis/remove-key.sh
   - chmod +x scripts/travis/testflight.sh
