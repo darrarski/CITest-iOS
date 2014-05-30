@@ -20,10 +20,14 @@ OUTPUTDIR="/Users/travis/build"
 echo "********************"
 echo "*     Signing      *"
 echo "********************"
+
+rm -f "$OUTPUTDIR/$APPNAME.ipa"
+rm -f "$OUTPUTDIR/$APPNAME.app.dSYM"
 xcrun -log -sdk iphoneos PackageApplication "$OUTPUTDIR/$APPNAME.app" -o "$OUTPUTDIR/$APPNAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
  
 RELEASE_NOTES="This version was uploaded automagically by Travis\nTravis Build number: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
- 
+
+rm -f "$OUTPUTDIR/$APPNAME.app.dSYM.zip"
 zip -r -9 "$OUTPUTDIR/$APPNAME.app.dSYM.zip" "$OUTPUTDIR/$APPNAME.app.dSYM"
  
 echo "********************"
