@@ -4,7 +4,8 @@ env:
   global:
     - APPNAME="CITest"
     - 'DEVELOPER_NAME="iPhone Distribution: EL Passion Next Sp. z o.o."'
-    - PROFILE_UUID=F3EDBAED-2997-40C9-87CC-EF3B70C99BB5
+    - PROFILE_NAME=Wildcard_App_InHouse_Dist
+    - DISTRIBUTION_LISTS="CITest"
     - secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
     - secure: RkQK6YQ6B1hBHthivNaqANDGxsj2/Xl0K+gv+seaNaJ2sS3TBTn4aWUAypVz3x4oZVMa50LtFOFzfTCeNLdDS/DzFxqrXPK8jw/p3hes8o3hSQKEhaoW4uapZRnZUdL+5x6X7dnhl+GZ2bPkbSAiK2LXvfOXS0dKC0+RD/aocV4=
     - secure: So0sQgYHOqnG7PT1xyI4QHQCMLwIWXT0CByiPvpKIw1NdbvzR4Ihd8EBI1yo1Yf/JTZc/qvjCKI6qMOZ4Ro9M7EfZLh2LdacyrUHXfjTTkJ4/D7gNrOQ0ucEr2knUoHaxVRA53bYQ8PdRpXqMCHWDPmvjNenLf05Y3FIVBlIi9E=
@@ -17,11 +18,13 @@ before_install:
 
 before_script:
   - export LANG=en_US.UTF-8
+  - chmod +x ./scripts/travis/add-key.sh
+  - chmod +x ./scripts/travis/remove-key.sh
+  - chmod +x ./scripts/travis/testflight.sh
   - ./scripts/travis/add-key.sh
 
 script:
-  - xctool clean build test archive -workspace CITest.xcworkspace -scheme CITest -configuration Release
-
+  - xctool clean build test archive -workspace CITest.xcworkspace -scheme CITest -configuration Release -sdk iphoneos7.1 CONFIGURATION_BUILD_DIR='~/build/'
 
 after_script:
   - ./scripts/travis/remove-key.sh
