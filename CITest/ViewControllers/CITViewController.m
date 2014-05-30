@@ -7,6 +7,7 @@
 //
 
 #import "CITViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface CITViewController ()
 
@@ -24,6 +25,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)crashButtonAction:(id)sender
+{
+    [[Crashlytics sharedInstance] crash];
 }
 
 @end

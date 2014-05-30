@@ -17,16 +17,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITest-iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnE-Kd-j5W">
-                                <rect key="frame" x="119" y="274" width="83" height="21"/>
+                                <rect key="frame" x="119" y="259" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-Mz-HBQ">
+                                <rect key="frame" x="104" y="288" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Force app crash">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="crashButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y8G-Q7-pJi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="qnE-Kd-j5W" secondAttribute="centerY" id="aXn-VJ-xgH"/>
+                            <constraint firstAttribute="centerX" secondItem="hgO-Mz-HBQ" secondAttribute="centerX" id="IIs-aT-mPB"/>
+                            <constraint firstAttribute="centerY" secondItem="qnE-Kd-j5W" secondAttribute="centerY" constant="15" id="Ugv-bC-h0V"/>
+                            <constraint firstItem="hgO-Mz-HBQ" firstAttribute="top" secondItem="qnE-Kd-j5W" secondAttribute="bottom" constant="8" id="qIj-tL-HbE"/>
                             <constraint firstAttribute="centerX" secondItem="qnE-Kd-j5W" secondAttribute="centerX" id="rm8-5t-dku"/>
                         </constraints>
                     </view>
