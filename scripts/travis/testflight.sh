@@ -29,6 +29,13 @@ zip -r -9 "$OUTPUTDIR/$APPNAME.app.dSYM.zip" "$OUTPUTDIR/$APPNAME.app.dSYM"
 echo "********************"
 echo "*    Uploading     *"
 echo "********************"
+
+echo "OUTPUTDIR:"
+ls $OUTPUTDIR
+
+echo "DISTRIBUTION_LISTS:"
+echo $DISTRIBUTION_LISTS
+
 curl http://testflightapp.com/api/builds.json \
   -F file="@$OUTPUTDIR/$APPNAME.ipa" \
   -F dsym="@$OUTPUTDIR/$APPNAME.app.dSYM.zip" \
