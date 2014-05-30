@@ -17,6 +17,13 @@ before_install:
 
 before_script:
   - export LANG=en_US.UTF-8
+  - ./scripts/travis/add-key.sh
 
 script:
   - xctool clean build test -workspace CITest.xcworkspace -scheme CITest -sdk iphonesimulator7.1 ONLY_ACTIVE_ARCH=NO
+
+after_script:
+  - ./scripts/travis/remove-key.sh
+
+after_success:
+  - ./scripts/travis/testflight.sh
