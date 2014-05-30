@@ -2,7 +2,10 @@ language: objective-c
 
 env:
   global:
-    secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
+    - APPNAME="CITest"
+    - 'DEVELOPER_NAME="iPhone Distribution: EL Passion Next Sp. z o.o."'
+    - PROFILE_UUID=F3EDBAED-2997-40C9-87CC-EF3B70C99BB5
+    - secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
 
 before_install:
   - brew update
