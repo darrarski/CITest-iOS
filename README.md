@@ -3,6 +3,8 @@ CITest-iOS
 
 This repository contains iOS project used for testing Travis CI service.
 
+To read more about the project and continuous integration for iOS apps, checkout [blogpost on my webiste](http://darrarski.pl/2014/06/ios-continuous-integration/).
+
 Last build status: 
 [![Build Status](https://travis-ci.org/darrarski/CITest-iOS.svg?branch=master)](https://travis-ci.org/darrarski/CITest-iOS)
 
