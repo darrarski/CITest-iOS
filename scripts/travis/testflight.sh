@@ -43,7 +43,7 @@ DEVELOPER_NAME="iPhone Distribution: EL Passion Next Sp. z o.o."
 PROFILE_NAME=Wildcard_App_InHouse_Dist
 
 # Path to provisioning profile file
-PROVISIONING_PROFILE="~/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
+PROVISIONING_PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
 
 ################################################################################
 
