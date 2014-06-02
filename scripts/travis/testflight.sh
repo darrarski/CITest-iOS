@@ -25,7 +25,7 @@ TF_REPLACE=True
 TF_BRANCH="master"
 
 # Build directory
-BUILD_DIR="~/build/release"
+BUILD_DIR="/Users/travis/build/release"
 
 # Release date
 RELEASE_DATE=`date -u '+%Y-%m-%d %H:%M:%S %Z'`
