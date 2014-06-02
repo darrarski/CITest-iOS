@@ -22,6 +22,8 @@ Whole process is triggered by pushing changes to the repository and is fully aut
 
 ## Credits
 
+- [EL Passion](http://www.elpassion.pl) mobile development team
+
 - [JagCesar](https://gist.github.com/JagCesar/a6283bc2cb2f439b3a1d)
 
 - [johanneswuerbach](https://gist.github.com/johanneswuerbach/5559514)
