@@ -2,13 +2,6 @@ language: objective-c
 
 env:
   global:
-    - APPNAME="CITest"
-    - 'DEVELOPER_NAME="iPhone Distribution: EL Passion Next Sp. z o.o."'
-    - PROFILE_NAME=Wildcard_App_InHouse_Dist
-    - 'TF_DISTRIBUTION_LISTS="CITest"'
-    - TF_NOTIFY=True
-    - TF_REPLACE=True
-    - 'TF_BRANCH="master"'
     - secure: VEgrIu1zTxcEOCBjES43Cw2UDL5dHYfdjE8zhantimYlyIu/9MlUQUt74ZgzI1hylejcjIQh0az9A1AX4UXWC5HAyYRLmUp4emAy6dfLNmk+dOStgBm8M186Jo+SjhyN4TrHFgragRIksJYvVu2dGkxgSX48QaNULnycB+Vs4z8=
     - secure: G9aI6mr6/2nXskApKm7xg0UuUiaGcPSS6WZaxR32e8GqBc/3AUysAV8P5PpqkUtqg++9XbTasuVWV7GChhBNQrCvc/+wOa7a3ru8Sqzy6C4ozm4tLw+nRMIBC5hkA9H72wxINhVlvtQuETEKOTmkPDPpdH6Wg7KyhOfuHvjyXcE=
     - secure: Ff7ehzezrczhlLK4JBtgQGiMdeWJEdsX8gATzK6Uq4Eq/J3aPDWnRXeHBF31UPbGzKy4W5M0oFLfFd9sEqgH+T7+CVBXPquVRxAdp+D9PLN7AMaZpeGc5Lw/IprKaCTChvP3H2DbhhMUe/03cw1oWWaCIkfibGmZEXry35Ikwf8=
@@ -19,11 +12,11 @@ before_install:
   - brew unlink xctool
   - brew install xctool
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-
-before_script:
   - chmod +x scripts/travis/add-key.sh
   - chmod +x scripts/travis/remove-key.sh
   - chmod +x scripts/travis/testflight.sh
+
+before_script:
   - scripts/travis/add-key.sh
 
 script:
