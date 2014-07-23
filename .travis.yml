@@ -11,6 +11,7 @@ before_install:
   - brew update
   - brew unlink xctool
   - brew install xctool
+  - brew link xctool
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
   - chmod +x scripts/travis/add-key.sh
   - chmod +x scripts/travis/remove-key.sh
